@@ -4,6 +4,8 @@ const RouteNames = {
   authStack: 'AuthStack',
   splash: 'Splash',
   home: 'HomeScreen',
-  settings: 'SettingsScreen'
+  settings: 'SettingsScreen',
+  faq: 'FAQScreen',
+  news: 'NewsScreen',
 }
 export default RouteNames;
