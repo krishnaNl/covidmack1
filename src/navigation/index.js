@@ -8,11 +8,12 @@ import {
 import RouteNames from './Routes';
 import HomeScreen from '../screens/HomeScreen';
 import SettingsScreen from '../screens/SettingsScreen';
-
+import LoginScreen from '../screens/LoginScreen'
 const DrawerNavigator = createDrawerNavigator(
   {
     [RouteNames.home]: HomeScreen,
     [RouteNames.settings]: SettingsScreen,
+    [RouteNames.login]:LoginScreen
   },
   {
     initialRouteName: RouteNames.home,
@@ -28,6 +29,7 @@ const DrawerNavigator = createDrawerNavigator(
 
 const AppStackNavigator = createStackNavigator({
   [RouteNames.appStack]: DrawerNavigator,
+  
 });
 
 const AppContainer = createAppContainer(
