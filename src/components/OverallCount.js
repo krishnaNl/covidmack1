@@ -28,13 +28,15 @@ class OverallCount extends React.Component {
               </View>
 
             </View>
+            
+            
         )
     }
 };
 export default OverallCount;
 const styles = StyleSheet.create({
     count: {
-      paddingTop: 200,
+      paddingTop: 240,
       // paddingHorizontal: 32,
     //   backgroundColor: Colors.lighter,
       flex:1,
@@ -46,7 +48,7 @@ const styles = StyleSheet.create({
     box:{
   // backgroundColor:'red',
   width:100,
-  height:100
+  // height:100
     },
     titleConfirmed:{
       color:'red',
