@@ -22,44 +22,7 @@ class LoginScreen extends Component {
 		};
 	}
 
-	/**
-	 * Function that sends a phone number and navigates to enter OTP modal
-	 */
-	sendNumber = () => {
 
-		// postDataMethod(URLs.baseURL + URLs.loginnumber, {
-		// 	phone: '+91' + this.state.phone,
-		// }).then((res) => {
-		// 	this.setState({ isModalVisible: false, showMe: true, disabled: false });
-		// });
-		// .catch((e) => {
-		// 	if (e.response.data === 'Number Not Registered') {
-		// 		this.setState({ spinner: false });
-
-		// 		Alert.alert('Please enter registered number');
-		// 	}
-		// });
-	};
-	/**
-	 * Function that sends an OTP and navigates to Dashboard
-	 */ sendOTP = () => {
-		// postDataMethod(URLs.baseURL + URLs.loginotp, {
-		// 	phone: '+91' + this.state.phone,
-		// 	otp: this.state.otp,
-		// 	fcm: this.props.fcmTok,
-		// })
-		// 	.then((response) => {
-		// 		// let tokens = response.data.token;
-		// 		// isLoggedIn('true');
-		// 		this.props.navigate('Dashboard');
-		// 	})
-		// 	.catch((e) => {
-		// 		if (e.response.data === 'Invalid Otp') {
-		// 			Alert.alert('Please enter Valid OTP');
-		// 		} else {
-		// 		}
-		// 	});
-	};
 
 	render() {
 		return (

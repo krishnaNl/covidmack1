@@ -13,14 +13,29 @@ import StateList from '../components/StateList'
 import Icon from 'react-native-vector-icons/Ionicons'
 import {Card,CardItem} from 'native-base';
 import Carousel from 'react-native-snap-carousel';
+import axios from 'axios'
 class HomeScreen extends React.Component {
+  componentDidMount() {
 
+  axios.get('https://api.rootnet.in/covid19-in/stats/latest')
+  .then(function (response) {
+    // handle success
+    console.warn('res',response.data.data.regional);
+    this.setState({resp:response.data.data}) 
+  })
+  .catch(function (error) {
+    // handle error
+    console.log(error);
+  })
+
+  }
     static navigationOptions = {
         title: 'Home',
       };
       constructor(props) {
         super(props);
         this.state = {
+          resp:{},
           activeIndex: 0,
           carouselItems: [
             {
@@ -88,7 +103,7 @@ class HomeScreen extends React.Component {
               </View>
 
             </View>                 
-                   <StateList/>
+                   <StateList  data={this.state.resp}/>
 
     </View>
     

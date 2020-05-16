@@ -311,7 +311,7 @@ function Item({ id, loc,confirmed,discharged,deaths, selected, onSelect }) {
   );
 }
 
-export default function StateList() {
+export default function StateList(props) {
   const [selected, setSelected] = React.useState(new Map());
 
   const onSelect = React.useCallback(
@@ -345,7 +345,7 @@ export default function StateList() {
         data={DATA}
         renderItem={({ item }) => (
           <Item
-            id={item.id}
+            // id={item.id}
             loc={item.loc}
             confirmed={item.totalConfirmed}
             discharged={item.discharged}
@@ -355,7 +355,7 @@ export default function StateList() {
           />
 
         )}
-        keyExtractor={item => item.id}
+        // keyExtractor={item => item.id}
         extraData={selected}
       />
 </SafeAreaView>
