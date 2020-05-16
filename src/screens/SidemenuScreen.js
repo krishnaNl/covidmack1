@@ -24,13 +24,11 @@ class SideMenuScreen extends Component {
     return (
       <View style={styles.container}>
         <ScrollView>
-          <TouchableOpacity>
             <Text
               style={styles.navItemStyle}
               onPress={this.navigateToScreen(RouteNames.login)}>
-              Home
+              Login
             </Text>
-          </TouchableOpacity>
           <View>
             <Text style={styles.sectionHeadingStyle}>USER</Text>
             <View style={styles.navSectionStyle}>
