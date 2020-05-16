@@ -1,5 +1,5 @@
 import React from 'react';
-import PlatformUtils from '../utils/PlatformUtils';
+import {PlatformUtils} from '../utils/PlatformUtils';
 import { WebView } from 'react-native-webview';
 
 const runFirst = `
@@ -50,7 +50,7 @@ class FAQScreen extends React.Component {
       }
 
     render() {
-    
+
         return (
             <WebView
                 source={{ uri: 'https://www.cdc.gov/coronavirus/2019-ncov/hcp/faq.html' }}
@@ -67,7 +67,7 @@ class FAQScreen extends React.Component {
                 injectJavaScript={runFirst}
                 onShouldStartLoadWithRequest={PlatformUtils.isIOS() ? this.onShouldStartLoadWithRequest : undefined}
                 onLoadStart={PlatformUtils.isAndroid() ? this.onLoadStart : undefined}
-     
+
             />
         )
     }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, TouchableOpacity } from 'react-native';
+import {Text, TouchableOpacity} from 'react-native';
 
 import SplashScreen from '../screens/SplashScreen';
 import {
@@ -34,9 +34,11 @@ const DrawerNavigator = createDrawerNavigator(
       activeTintColor: '#fff',
       activeBackgroundColor: '#6b52ae',
     },
-    navigationOptions: ({ navigation }) => ({
+    navigationOptions: ({navigation}) => ({
       headerLeft: (
-        <TouchableOpacity style={{paddingHorizontal: 10}} onPress={() => navigation.toggleDrawer()}>
+        <TouchableOpacity
+          style={{paddingHorizontal: 10}}
+          onPress={() => navigation.toggleDrawer()}>
           <Icon name="bars" size={30} color="#6b52ae" />
         </TouchableOpacity>
       ),
