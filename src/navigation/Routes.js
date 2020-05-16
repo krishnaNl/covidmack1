@@ -8,5 +8,6 @@ const RouteNames = {
   login: 'Login',
   faq: 'FAQ',
   news: 'News',
+  riskAssesment: 'RiskAssesment'
 };
 export default RouteNames;

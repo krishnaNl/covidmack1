@@ -57,6 +57,11 @@ class SideMenuScreen extends Component {
                 onPress={this.navigateToScreen(RouteNames.faq)}>
                 FAQs
               </Text>
+              <Text
+                style={styles.navItemStyle}
+                onPress={this.navigateToScreen(RouteNames.riskAssesment)}>
+                Risk Assesment
+              </Text>
             </View>
           </View>
         </ScrollView>

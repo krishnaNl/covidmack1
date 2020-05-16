@@ -16,6 +16,8 @@ import SettingsScreen from '../screens/SettingsScreen';
 import LoginScreen from '../screens/LoginScreen'
 import NewsScreen from '../screens/NewsScreen';
 import FAQScreen from '../screens/FAQScreen';
+import RiskScreen from '../screens/RiskScreen';
+
 
 import SideMenuScreen from '../screens/SidemenuScreen';
 
@@ -26,6 +28,8 @@ const DrawerNavigator = createDrawerNavigator(
     [RouteNames.login]: LoginScreen,
     [RouteNames.faq]: FAQScreen,
     [RouteNames.news]: NewsScreen,
+    [RouteNames.riskAssesment]: RiskScreen,
+
   },
   {
     initialRouteName: RouteNames.home,
