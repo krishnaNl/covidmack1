@@ -1,5 +1,5 @@
 import React from 'react';
-import PlatformUtils from '../utils/PlatformUtils';
+import {PlatformUtils} from '../utils/PlatformUtils';
 import { WebView } from 'react-native-webview';
 
 const runFirst = `
