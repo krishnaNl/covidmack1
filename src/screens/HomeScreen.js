@@ -19,9 +19,10 @@ class HomeScreen extends React.Component {
     axios
       .get('https://api.rootnet.in/covid19-in/stats/latest')
       .then(function(response) {
+        const responseRegional = response.data.data.regional;
         // handle success
-        console.warn('res', response.data.data.regional);
-        this.setState({resp: response.data.data});
+        console.warn('res', responseRegional);
+        this.setState({resp: responseRegional});
       })
       .catch(function(error) {
         // handle error
