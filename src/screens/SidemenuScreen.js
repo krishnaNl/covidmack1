@@ -1,5 +1,11 @@
 import React, {Component} from 'react';
-import {ScrollView, Text, View, StyleSheet} from 'react-native';
+import {
+  ScrollView,
+  Text,
+  View,
+  StyleSheet,
+  TouchableOpacity,
+} from 'react-native';
 import PropTypes from 'prop-types';
 
 import {NavigationActions} from 'react-navigation';
@@ -18,6 +24,11 @@ class SideMenuScreen extends Component {
     return (
       <View style={styles.container}>
         <ScrollView>
+            <Text
+              style={styles.navItemStyle}
+              onPress={this.navigateToScreen(RouteNames.login)}>
+              Login
+            </Text>
           <View>
             <Text style={styles.sectionHeadingStyle}>USER</Text>
             <View style={styles.navSectionStyle}>
@@ -46,12 +57,17 @@ class SideMenuScreen extends Component {
                 onPress={this.navigateToScreen(RouteNames.faq)}>
                 FAQs
               </Text>
+              <Text
+                style={styles.navItemStyle}
+                onPress={this.navigateToScreen(RouteNames.riskAssesment)}>
+                Risk Assesment
+              </Text>
             </View>
           </View>
         </ScrollView>
-        <View style={styles.footerContainer}>
+        {/*<View style={styles.footerContainer}>
           <Text>This is my fixed footer</Text>
-        </View>
+        </View>*/}
       </View>
     );
   }

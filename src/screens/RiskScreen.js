@@ -1,13 +1,12 @@
 import React from 'react';
-
-import {WebView} from 'react-native-webview';
 import {PlatformUtils} from '../utils/PlatformUtils';
+import { WebView } from 'react-native-webview';
 
 const runFirst = `
             javascript: (function() {
 
-            if (document.getElementsByClassName('header-wrapper').length > 0) {
-                document.getElementsByClassName('header-wrapper')[0].remove();
+            if (document.getElementsByClassName('prescreening-header ng-scope').length > 0) {
+                document.getElementsByClassName('prescreening-header ng-scope')[0].remove();
               }
 
             if (document.getElementsByClassName('site-title').length > 0) {
@@ -42,33 +41,35 @@ const runFirst = `
             })()
             true; // note: this is required, or you'll sometimes get silent failures
       `;
-class NewsScreen extends React.Component {
-  onNavigationStateChange = events => {
-    this.webview.injectJavaScript(runFirst);
-    return true;
-  };
 
-  render() {
-    return (
-      <WebView
-        source={{uri: 'https://www.bing.com/covid/local/india'}}
-        style={{flex: 1}}
-        thirdPartyCookiesEnabled={true}
-        androidHardwareAccelerationDisabled={true}
-        domStorageEnabled={true}
-        javaScriptEnabled={true}
-        originWhitelist={['*']}
-        scalesPageToFit={true}
-        startInLoadingState={true}
-        ref={el => (this.webview = el)}
-        onNavigationStateChange={this.onNavigationStateChange}
-        injectJavaScript={runFirst}
-        onShouldStartLoadWithRequest={
-          PlatformUtils.isIOS() ? this.onShouldStartLoadWithRequest : undefined
-        }
-        onLoadStart={PlatformUtils.isAndroid() ? this.onLoadStart : undefined}
-      />
-    );
-  }
-}
-export default NewsScreen;
+class RiskScreen extends React.Component {
+
+     onNavigationStateChange = (events) => {
+        this.webview.injectJavaScript(runFirst);
+        return true;
+      }
+
+    render() {
+
+        return (
+            <WebView
+                source={{ uri: 'https://covid19.infermedica.com/en/#0-99990' }}
+                style={{ flex: 1 }}
+                thirdPartyCookiesEnabled={true}
+                androidHardwareAccelerationDisabled={true}
+                domStorageEnabled={true}
+                javaScriptEnabled={true}
+                originWhitelist={['*']}
+                scalesPageToFit={true}
+                startInLoadingState={true}
+                ref={(el) => this.webview = el}
+                onNavigationStateChange={this.onNavigationStateChange}
+                injectJavaScript={runFirst}
+                onShouldStartLoadWithRequest={PlatformUtils.isIOS() ? this.onShouldStartLoadWithRequest : undefined}
+                onLoadStart={PlatformUtils.isAndroid() ? this.onLoadStart : undefined}
+
+            />
+        )
+    }
+};
+export default RiskScreen;

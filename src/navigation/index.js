@@ -13,8 +13,11 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import RouteNames from './Routes';
 import HomeScreen from '../screens/HomeScreen';
 import SettingsScreen from '../screens/SettingsScreen';
+import LoginScreen from '../screens/LoginScreen'
 import NewsScreen from '../screens/NewsScreen';
 import FAQScreen from '../screens/FAQScreen';
+import RiskScreen from '../screens/RiskScreen';
+
 
 import SideMenuScreen from '../screens/SidemenuScreen';
 
@@ -22,8 +25,11 @@ const DrawerNavigator = createDrawerNavigator(
   {
     [RouteNames.home]: HomeScreen,
     [RouteNames.settings]: SettingsScreen,
+    [RouteNames.login]: LoginScreen,
     [RouteNames.faq]: FAQScreen,
     [RouteNames.news]: NewsScreen,
+    [RouteNames.riskAssesment]: RiskScreen,
+
   },
   {
     initialRouteName: RouteNames.home,
@@ -49,6 +55,7 @@ const DrawerNavigator = createDrawerNavigator(
 
 const AppStackNavigator = createStackNavigator({
   [RouteNames.appStack]: DrawerNavigator,
+
 });
 
 const AppContainer = createAppContainer(

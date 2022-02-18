@@ -3,9 +3,11 @@ const RouteNames = {
   appStack: 'AppStack',
   authStack: 'AuthStack',
   splash: 'Splash',
-  home: 'HomeScreen',
-  settings: 'SettingsScreen',
-  faq: 'FAQScreen',
-  news: 'NewsScreen',
-}
+  home: 'Home',
+  settings: 'Track Your History',
+  login: 'Login',
+  faq: 'FAQ',
+  news: 'News',
+  riskAssesment: 'RiskAssesment'
+};
 export default RouteNames;

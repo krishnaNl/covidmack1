@@ -1,28 +1,31 @@
-import {LocalApiClient} from "../gateways/localApiClient/LocalApiClient";
-import {NetworkUtils} from "../../utils/NetworkUtils";
+import {LocalApiClient} from '../gateways/localApiClient/LocalApiClient';
+import {NetworkUtils} from '../../utils/NetworkUtils';
 
 const ENDPOINTS = {
-    oauthToken: () => `/auth/token`,
+  oauthToken: () => '/auth/token',
 };
 
 class UserRepository {
-    apiClient;
+  apiClient;
 
-    endPoints = ENDPOINTS;
+  endPoints = ENDPOINTS;
 
-    constructor(apiClient) {
-        this.apiClient = apiClient;
-    }
+  constructor(apiClient) {
+    this.apiClient = apiClient;
+  }
 
-     getApiClient = () => {
-        return this.apiClient;
-    }
+  getApiClient = () => {
+    return this.apiClient;
+  };
 
-    login = async (request) => {
-        return await this.apiClient.post(ENDPOINTS.oauthToken(), NetworkUtils.urlEncode(request.data));
-    }
+  login = async request => {
+    return await this.apiClient.post(
+      ENDPOINTS.oauthToken(),
+      NetworkUtils.urlEncode(request.data),
+    );
+  };
 }
 
-const  userRepository = new UserRepository(LocalApiClient);
+const userRepository = new UserRepository(LocalApiClient);
 
 export {userRepository as UserRepository};
